@@ -1,0 +1,19 @@
+
+div.dokuwiki p.plugin__pagenav {
+    padding: 0;
+    margin: 2em 0 1em 0;
+    text-align: center;
+}
+
+div.dokuwiki p.plugin__pagenav a {
+    margin: 0 0.5em;
+}
+
+div.dokuwiki p.plugin__pagenav img {
+    margin: 0 0.5em;
+}
+
+div.dokuwiki p.plugin__pagenav a img {
+    margin: 0;
+}
+
