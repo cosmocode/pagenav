@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Andreas Gohr <gohr@cosmocode.de>
  */
@@ -11,20 +10,6 @@ if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 require_once(DOKU_PLUGIN.'syntax.php');
 
 class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin {
-
-    /**
-     * return some info
-     */
-    function getInfo(){
-        return array(
-            'author' => 'Andreas Gohr',
-            'email'  => 'gohr@cosmocode.de',
-            'date'   => '2009-07-25',
-            'name'   => 'Page Navigation Plugin',
-            'desc'   => 'Displays links to the next or previous alphabetically ordered page',
-            'url'    => 'http://www.dokuwiki.org/plugin:pagenav',
-        );
-    }
 
     /**
      * What kind of syntax are we?

@@ -1,4 +1,4 @@
-<?
+<?php
 
 $lang['last']  = 'Last Page';
 $lang['next']  = 'Next Page';
