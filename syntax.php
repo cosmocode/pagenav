@@ -59,7 +59,7 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin {
      */
     function render($format, &$renderer, $data) {
         require_once(DOKU_INC.'inc/search.php');
-        global $ID;
+        global $INFO;
         global $conf;
         if($format != 'xhtml') return false;
 
@@ -70,14 +70,14 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin {
         static $list = null; // static to reuse the array for multiple calls.
         if(is_null($list)){
             $list = array();
-            $ns = str_replace(':','/',getNS($ID));
+            $ns = str_replace(':','/',getNS($INFO['id']));
             search($list,$conf['datadir'],'search_list',array(),$ns);
         }
-        $id = $ID;
+        $id = $INFO['id'];
 
         // find the start page
         $exist = false;
-        $start = getNS($ID).':';
+        $start = getNS($INFO['id']).':';
         resolve_pageid('',$start,$exist);
 
         $cnt = count($list);
