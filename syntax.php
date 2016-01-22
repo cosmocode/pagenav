@@ -44,7 +44,7 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin {
     /**
      * Handle the match
      */
-    function handle($match, $state, $pos, &$handler){
+    function handle($match, $state, $pos, Doku_Handler $handler){
         //split the match in it's parts
         $match = substr($match,1,-1);
         list($mode,$glob)    = explode(' ',$match,2);
@@ -57,7 +57,7 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin {
     /**
      * Create output
      */
-    function render($format, &$renderer, $data) {
+    function render($format, Doku_Renderer $renderer, $data) {
         require_once(DOKU_INC.'inc/search.php');
         global $INFO;
         global $conf;
