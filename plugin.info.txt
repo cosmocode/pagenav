@@ -1,7 +1,7 @@
 base    pagenav
 author  Andreas Gohr
 email   dokuwiki@cosmocode.de
-date    2015-02-26
+date    2016-01-22
 name    Page Navigation Plugin
 desc    Displays links to the next or previous alphabetically ordered page
 url     http://www.dokuwiki.org/plugin:pagenav
