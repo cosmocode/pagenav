@@ -127,7 +127,7 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin
 
         // no page, gray out item
         if (blank($page)) {
-            return '<span>' . $img . '</span>';
+            return '<span class="' . $cmd . '">' . $img . '</span>';
         }
 
 
@@ -135,7 +135,7 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin
         $attr = [
             'href' => wl($page),
             'title' => $this->getLang($cmd) . ': ' . hsc($title),
-            'class' => 'wikilink1'
+            'class' => 'wikilink1 ' . $cmd,
         ];
         return '<a ' . buildAttributes($attr) . '>' . $img . '</a>';
     }
