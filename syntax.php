@@ -60,7 +60,7 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin
         if (is_null($list)) {
             $list = array();
             $ns = str_replace(':', '/', getNS($INFO['id']));
-            search($list, $conf['datadir'], 'search_list', array(), $ns);
+            search($list, $conf['datadir'], 'search_list', array(), utf8_encodeFN($ns));
         }
         $id = $INFO['id'];
 
