@@ -115,20 +115,28 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin
     }
 
     /**
-     * @param string $page
+     * Builds the link using an SVG image
+     *
+     * @param string $page page to link to
      * @param string $cmd
      * @return string
      */
     protected function buildImgLink($page, $cmd)
     {
-        if (!$page) {
-            return '<img src="' . DOKU_BASE . 'lib/plugins/pagenav/img/' . $cmd . '-off.png" alt="" />';
+        $img = inlineSVG(__DIR__ . '/img/' . $cmd . '.svg');
+
+        // no page, gray out item
+        if (blank($page)) {
+            return '<span>' . $img . '</span>';
         }
 
+
         $title = p_get_first_heading($page);
-        $img = '<img src="' . DOKU_BASE . 'lib/plugins/pagenav/img/' . $cmd . '.png" alt="' . $this->getLang($cmd) . '" />';
-
-        return '<a href="' . wl($page) . '" title="' . $this->getLang($cmd) . ': ' . hsc($title) . '" class="wikilink1">' . $img . '</a>';
+        $attr = [
+            'href' => wl($page),
+            'title' => $this->getLang($cmd) . ': ' . hsc($title),
+            'class' => 'wikilink1'
+        ];
+        return '<a ' . buildAttributes($attr) . '>' . $img . '</a>';
     }
-
 }
