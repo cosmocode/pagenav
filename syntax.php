@@ -86,6 +86,7 @@ class syntax_plugin_pagenav extends DokuWiki_Syntax_Plugin
             } else {
                 if ($glob && !preg_match('/' . $glob . '/', noNS($list[$i]['id']))) continue;
                 if ($list[$i]['id'] == $start) continue;
+                if (isHiddenPage($list[$i]['id'])) continue;
 
                 if ($self) {
                     // we're after the current id
